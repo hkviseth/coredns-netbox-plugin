@@ -34,7 +34,7 @@ any:any
 cache:cache
 minimal:minimal
 hosts:hosts
-netbox:github.com/oz123/coredns-netbox-plugin
+netbox:github.com/hkviseth/coredns-netbox-plugin
 file:file
 auto:auto
 secondary:secondary

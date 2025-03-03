@@ -114,6 +114,11 @@ func (n *Netbox) queryreverse(host string) ([]string, error) {
 	// // Initialise an empty slice of domains
 	domains := make([]string, 0)
 
+	// return error for fallthrough in case of invalid RTP RR request
+	if ip == "" {
+		return domains, fmt.Errorf("Host string not valid RTP RR (but may be DNS-SD): %s", host)
+	}
+
 	// do http request against NetBox instance
 	resp, err := get(n.Client, requrl, n.Token)
 	if err != nil {
